@@ -6,6 +6,25 @@ import jwt from 'jsonwebtoken';
 import logger from '../logger';
 const router = Router();
 
+/**
+ * @swagger
+ *
+ * /login:
+ *   post:
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: username
+ *         description: User's Email ID
+ *         in: formdata
+ *         required: true
+ *         schema:
+ *              type: string 
+ *       - name: password
+ *         in: formdata
+ *         required: true
+ *         type: string
+ */
 router.post("/login", userValidators.userLogin, async function (req: express.Request, res: express.Response) {
     try {
         let user = await userRepositories.validateUser(req.body)
