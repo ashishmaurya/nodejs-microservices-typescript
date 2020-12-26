@@ -14,16 +14,18 @@ const router = Router();
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: username
- *         description: User's Email ID
- *         in: formdata
- *         required: true
+ *       - in: body
+ *         name: requestBody
+ *         description: The user/customer to login.
  *         schema:
- *              type: string 
- *       - name: password
- *         in: formdata
- *         required: true
- *         type: string
+ *           type: object
+ *           required:
+ *             - email
+ *           properties:
+ *             email:
+ *               type: string
+ *             password:
+ *               type: string
  */
 router.post("/login", userValidators.userLogin, async function (req: express.Request, res: express.Response) {
     try {
