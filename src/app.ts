@@ -7,6 +7,7 @@ import { createConnection } from 'typeorm';
 import 'reflect-metadata'
 import createRabbitMQChannel from './queue';
 import cors from 'cors';
+import userAccountRoutes from './routes/userAccountRoutes';
 dotenv.config()
 
 //Enable Mongoose
@@ -33,6 +34,7 @@ app.use(expressFileUpload({
 }));
 
 //Add your routes here
+app.use(userAccountRoutes)
 
 //Sample error handler for express
 // app.use(function(err,req,res,next){

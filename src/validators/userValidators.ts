@@ -16,6 +16,7 @@ export default {
         })
         if (error) {
             res.json({ error: error })
+            return
         }
         req.body = value
         next();
