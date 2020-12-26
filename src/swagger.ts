@@ -27,4 +27,3 @@ const swaggerSpec = swaggerJSDoc(options);
 const swaggerUi = require('swagger-ui-express');
 
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-console.log(swaggerSpec)
