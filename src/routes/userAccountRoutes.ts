@@ -18,7 +18,6 @@ router.post("/login", userValidators.userLogin, async function (req: express.Req
             res.json({ message: "Logged In user", user: user, token: token })
         } else {
             res.json({ message: "Invalid email or password" })
-
         }
     } catch (err) {
         logger.error(err)
