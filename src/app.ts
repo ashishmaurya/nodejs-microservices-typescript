@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import { createConnection } from 'typeorm';
 import 'reflect-metadata'
 import createRabbitMQChannel from './queue';
-
+import cors from 'cors';
 dotenv.config()
 
 //Enable Mongoose
@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_DB as string, { useNewUrlParser: true, useUni
 
 var app: express.Application = express();
 
-
+app.use(cors())
 app.use(express.json())
 app.use(expressFileUpload({
     tempFileDir: "./tmp/",
