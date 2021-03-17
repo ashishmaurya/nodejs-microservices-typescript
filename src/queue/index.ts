@@ -32,21 +32,21 @@ const createRabbitMQChannel = async (rabbitmqURL: string) => {
     }
 };
 
-export const assertQueue = (queueName: string,
+export const assertQueue = async (queueName: string,
     channel: amqp.Channel,
     options: amqp.Options.AssertQueue
 ) => {
-    channel.assertQueue(queueName, options);
+    await channel.assertQueue(queueName, options);
 }
 
 
-export const consumeFromQueue = (
+export const consumeFromQueue = async (
     queueName: string,
     channel: amqp.Channel,
     handler: (payload: amqp.ConsumeMessage) => void,
     options: amqp.Options.Consume
 ) => {
-    channel.consume(queueName, handler, options || { noAck: false });
+    await channel.consume(queueName, handler, options || { noAck: false });
 };
 
 

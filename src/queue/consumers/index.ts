@@ -1,11 +1,7 @@
-import { Channel, ConsumeMessage } from 'amqplib';
-import { consumeFromQueue } from '../index';
+import IBaseConsumer from './BaseConsumer';
 
-export const consumeDummyQueue = (
-  channel: Channel,
-  handler: (payload: ConsumeMessage) => void,
-) => {
-  consumeFromQueue('QUEUE_DUMMY', channel, handler,{
-    noAck:false
-  });
-};
+
+export async function startConsumer(consumer: IBaseConsumer) {
+  await consumer.initialize();
+  await consumer.start();
+}

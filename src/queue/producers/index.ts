@@ -1,6 +1,6 @@
-import { assertQueue, sendToQueue } from '../index';
-import { Channel } from 'amqplib';
+import IBaseProducer from "./BaseProducer";
 
-export const produceDummyProducer = (channel: Channel, payload?: any) => {
-  sendToQueue('QUEUE_DUMMY', channel, payload);
-};
+
+export async function startProducer(producer: IBaseProducer) {
+  await producer.initialize();
+}
