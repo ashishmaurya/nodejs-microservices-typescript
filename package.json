@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc -p .",
     "start": "node dist/server.js",
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon src/server.ts",
+    "lint": "eslint --ignore-path .gitignore --ext .ts ."
   },
   "keywords": [],
   "author": "",
@@ -42,6 +43,12 @@
     "@types/node": "^14.14.12",
     "@types/uuid": "^8.3.0",
     "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
     "faker": "^5.1.0",
     "nodemon": "^2.0.6",
     "ts-node": "^10.0.0",
