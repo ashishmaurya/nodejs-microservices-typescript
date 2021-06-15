@@ -1,0 +1,12 @@
+{
+    "dbConfig":{
+        "host":"",
+        "port":"",
+        "user":"",
+        "password":""
+    },
+    "queue":{
+        "name":"RABBITMQ",
+        "connectionString":"amqp://localhost"
+    }
+}

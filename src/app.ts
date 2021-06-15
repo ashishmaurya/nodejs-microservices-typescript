@@ -1,7 +1,6 @@
 import express from 'express';
 import expressFileUpload from 'express-fileupload';
 import logger from './logger';
-import dotenv from 'dotenv';
 import { createConnection } from 'typeorm';
 import 'reflect-metadata'
 import cors from 'cors';
@@ -10,7 +9,6 @@ import { startConsumer } from './queue/consumers';
 import TestConsumer from './queue/consumers/TestConsumer';
 import TestProducer from './queue/producers/TestProducer';
 import { startProducer } from './queue/producers';
-dotenv.config();
 
 //Enable Mongoose
 // mongoose.connect(process.env.MONGO_DB as string, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
