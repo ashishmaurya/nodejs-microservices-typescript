@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sample
-        image: mstore/auth
+        image: imagename #docker image name
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -30,5 +30,5 @@ spec:
     app: sample
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8080
+      port: 80 #service port
+      targetPort: 8080 #container port or pod port
