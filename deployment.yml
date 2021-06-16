@@ -20,6 +20,19 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+          name: express
+        - containerPort: 3001
+          name: http
+        livenessProbe:
+          httpGet:
+            path: /v1/health
+            port: http
+          initialDelaySeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /v1/health
+            port: http
+          initialDelaySeconds: 20
 ---
 apiVersion: v1
 kind: Service

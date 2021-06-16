@@ -18,7 +18,6 @@ import { startProducer } from './queue/producers';
 //     console.log("Connected TypeORM")
 // }).catch(err=>console.log(err))
 
-
 const app: express.Application = express();
 
 app.use(cors())
