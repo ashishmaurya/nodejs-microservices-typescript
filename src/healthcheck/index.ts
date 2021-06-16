@@ -11,7 +11,6 @@ function healthcheckBootstrap() {
     });
     const port =
       (config.has('HEALTH_PORT') ? config.get('HEALTH_PORT') : null) || 3001;
-    logger.info('Called healthhcheck');
     const server = app.listen(port, () => {
       const address = server.address();
       if (typeof address === 'object') {

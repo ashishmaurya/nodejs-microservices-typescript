@@ -7,7 +7,7 @@ const port = (config.has('PORT') ? config.get('PORT') : null) || 8080;
 const server = app.listen(port, () => {
   const address = server.address();
   if (typeof address === 'object') {
-    logger.log('Server Started on port', address?.port);
+    logger.info(`Server Started on port ${address?.port}`);
   }
 });
 
