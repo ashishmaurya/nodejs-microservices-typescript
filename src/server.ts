@@ -32,3 +32,8 @@ process.on('SIGINT', () => {
   //TODO:: Do some cleanup if required
   process.exit(0);
 });
+
+process.on('uncaughtException', (ex) => {
+  logger.info('UNCAUGHT EXCEPTION! 💥 Shutting down...', ex);
+  process.exit(1);
+});
