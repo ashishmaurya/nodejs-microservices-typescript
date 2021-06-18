@@ -20,3 +20,15 @@ healthcheckBootstrap()
     logger.error(err.message);
     process.exit(0);
   });
+
+process.on('SIGTERM', () => {
+  logger.info('SIGTERM Signal received');
+  //TODO:: Do some cleanup if required
+  process.exit(0);
+});
+
+process.on('SIGINT', () => {
+  console.info('SIGINT signal recceived');
+  //TODO:: Do some cleanup if required
+  process.exit(0);
+});
