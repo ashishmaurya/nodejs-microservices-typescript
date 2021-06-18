@@ -6,8 +6,7 @@ import userValidators from '../validators/userValidators';
 import logger from '../logger';
 import { IAppRoute } from './IAppRoute';
 
-export default class UserAccountRoutes implements IAppRoute {
-
+class UserAccountRoutes implements IAppRoute {
   router: express.Router;
 
   constructor() {
@@ -45,3 +44,7 @@ export default class UserAccountRoutes implements IAppRoute {
     res.status(200).send('Hello from server');
   }
 }
+
+export default () => {
+  return new UserAccountRoutes().router;
+};

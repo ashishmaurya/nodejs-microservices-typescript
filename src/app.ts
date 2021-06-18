@@ -30,6 +30,6 @@ app.use(
 );
 
 //Add your routes here
-app.use(new UserAccountRoutes().router);
+app.use(UserAccountRoutes());
 
 export default app;
