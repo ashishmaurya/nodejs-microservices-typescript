@@ -1,4 +1,5 @@
 {
     "PORT":"PORT",
-    "HEALTH_PORT":"3001"
+    "HEALTH_PORT":"3001",
+    "GRPC_ENDPOINT":"GRPC_ENDPOINT"
 }

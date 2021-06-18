@@ -8,5 +8,6 @@
     "queue":{
         "name":"RABBITMQ",
         "connectionString":"amqp://localhost"
-    }
+    },
+    "GRPC_ENDPOINT":"localhost:50051"
 }
