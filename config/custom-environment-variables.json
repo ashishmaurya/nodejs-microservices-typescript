@@ -1,4 +1,8 @@
 {
-    "PORT":"PORT",
-    "HEALTH_PORT":"3001"
+    "app":{
+        "port":"PORT"
+    },
+    "healthCheck":{
+        "port":"HEALTH_PORT"
+    }
 }

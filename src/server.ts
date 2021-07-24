@@ -3,7 +3,7 @@ import app from './app';
 import healthcheckBootstrap from './healthcheck';
 import logger from './logger';
 
-const port = (config.has('PORT') ? config.get('PORT') : null) || 8080;
+const port = config.get('app.port');
 const server = app.listen(port, () => {
   const address = server.address();
   if (typeof address === 'object') {

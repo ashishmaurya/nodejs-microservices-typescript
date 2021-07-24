@@ -9,8 +9,7 @@ function healthcheckBootstrap() {
       //TODO:: Check readyness and liveness
       res.send('ready');
     });
-    const port =
-      (config.has('HEALTH_PORT') ? config.get('HEALTH_PORT') : null) || 3001;
+    const port = config.get('healthCheck.port');
     const server = app.listen(port, () => {
       const address = server.address();
       if (typeof address === 'object') {

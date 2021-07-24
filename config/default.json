@@ -1,4 +1,8 @@
 {
+    "serviceName":"sample-api",
+    "app":{
+        "port":"8080"
+    },
     "dbConfig":{
         "host":"",
         "port":"",
@@ -8,5 +12,8 @@
     "queue":{
         "name":"RABBITMQ",
         "connectionString":"amqp://localhost"
+    },
+    "healthCheck":{
+        "port":"3000"
     }
 }
