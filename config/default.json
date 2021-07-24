@@ -1,7 +1,8 @@
 {
-    "serviceName":"sample-api",
     "app":{
-        "port":"8080"
+        "name":"sample-api",
+        "port":"8080",
+        "version":"1.0.0"
     },
     "dbConfig":{
         "host":"",

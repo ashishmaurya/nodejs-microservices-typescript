@@ -1,6 +1,8 @@
 {
     "app":{
-        "port":"PORT"
+        "port":"PORT",
+        "name":"APP_NAME",
+        "version":"APP_VERSION"
     },
     "healthCheck":{
         "port":"HEALTH_PORT"

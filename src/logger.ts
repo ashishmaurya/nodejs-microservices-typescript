@@ -1,12 +1,11 @@
 // const winston = require('winston');
-import winston from 'winston';
-
+import winston, { info } from 'winston';
+import config from 'config';
+import os from 'os';
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
-  defaultMeta: {
-    service: 'sample-service', lang: 'nodejs', version: '1.0.1',
-  },
+  defaultMeta: getServiceMetas(),
   transports: [
     //
     // - Write all logs with level `error` and below to `error.log`
@@ -14,7 +13,7 @@ const logger = winston.createLogger({
     //
     // new winston.transports.File({ filename: 'error.log', level: 'error' }),
     // new winston.transports.File({ filename: 'combined.log' }),
-    new winston.transports.Console()
+    new winston.transports.Console(),
   ],
 });
 
@@ -27,5 +26,14 @@ const logger = winston.createLogger({
 //     format: winston.format.simple(),
 //   }));
 // }
+
+function getServiceMetas() {
+  return {
+    service: config.get<string>('app.name'),
+    lang: 'nodejs',
+    version: config.get<string>('app.version'),
+    host: os.hostname(),
+  };
+}
 
 export default logger;
