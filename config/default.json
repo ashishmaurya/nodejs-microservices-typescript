@@ -1,0 +1,20 @@
+{
+    "app":{
+        "name":"sample-api",
+        "port":"8080",
+        "version":"1.0.0"
+    },
+    "dbConfig":{
+        "host":"",
+        "port":"",
+        "user":"",
+        "password":""
+    },
+    "queue":{
+        "name":"RABBITMQ",
+        "connectionString":"amqp://localhost"
+    },
+    "healthCheck":{
+        "port":"3000"
+    }
+}

@@ -2,6 +2,7 @@
 FROM node:14.4.0 AS build
 
 USER node
+RUN mkdir /home/node/app
 WORKDIR /home/node/app
 
 # Copy dependency information and install all dependencies
@@ -24,6 +25,7 @@ FROM node:lts-alpine
 USER node
 EXPOSE 8080
 
+RUN mkdir /home/node/app
 WORKDIR /home/node/app
 
 # Copy dependency information and install production-only dependencies
