@@ -7,7 +7,7 @@ export default function (req: express.Request, res: express.Response, next: expr
     const authToken = auth.split(' ').pop() as string;
     const token = jwt.verify(authToken, process.env.JWT_TOKEN as string);
     if (token) {
-      (req as any).user = token;
+      req.user = token;
       next();
       return;
     }
