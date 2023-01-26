@@ -55,11 +55,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "faker": "^5.1.0",
     "nodemon": "^2.0.6",
-<<<<<<< HEAD
     "swagger-jsdoc": "^6.0.0",
-=======
     "ts-node": "^10.0.0",
->>>>>>> main
     "typescript": "^4.1.3"
   }
 }
