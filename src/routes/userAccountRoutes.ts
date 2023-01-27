@@ -6,6 +6,38 @@ import userValidators from '../validators/userValidators';
 import logger from '../logger';
 import { IAppRoute } from './IAppRoute';
 
+/**
+ * @openapi
+ * components:
+ *    securitySchemes:
+ *      apiAuthorization:
+ *          type: "apiKey"
+ *          name: "authorization"
+ *          in: "header"
+ *      
+ * 
+ * 
+ */
+
+
+/**
+ * @openapi
+ * components:
+ *  schemas:
+ *    LoginRequestBody:
+ *      type: object
+ *      properties:
+ *        username:
+ *          type: string
+ *        password:
+ *          type: string
+ *          
+ */
+interface ILoginRequestBody{
+  username: string;
+  password: string;
+}
+
 class UserAccountRoutes implements IAppRoute {
   router: express.Router;
 
@@ -18,7 +50,24 @@ class UserAccountRoutes implements IAppRoute {
     this.router.get('/hi', this.sayHi);
   }
 
-  private async login(req: express.Request, res: express.Response) {
+  /**
+   * @openapi
+   * /login:
+   *   post:
+   *     tags: 
+   *      - login
+   *     description: Login into microservice
+   *     requestBody:
+   *        description: Login request Body
+   *        content:
+   *          application/json:
+   *            schema:
+   *              $ref: "#/components/schemas/LoginRequestBody"
+   *     responses:
+   *       200:
+   *         description: returns successfull login user
+   */
+  private async login(req: express.Request<any,any,ILoginRequestBody>, res: express.Response) {
     try {
       const user = await userRepositories.validateUser(req.body);
       if (user) {
@@ -40,6 +89,17 @@ class UserAccountRoutes implements IAppRoute {
     }
   }
 
+  /**
+   * @openapi
+   * /hi:
+   *   get:
+   *     tags: 
+   *      - hi
+   *     description: Welcome to nodejs-microservices!
+   *     responses:
+   *       200:
+   *         description: Returns a hello from server string.
+   */
   private async sayHi(req: express.Request, res: express.Response) {
     res.status(200).send('Hello from server');
   }
