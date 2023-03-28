@@ -1,0 +1,11 @@
+components:
+  parameters:
+    productId:
+      in: query
+      name: productId
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+      description: Product Id(products tables reference)
+

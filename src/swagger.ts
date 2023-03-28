@@ -39,7 +39,7 @@ const options = {
     swaggerDefinition,
     // Path to the API docs
     // Note that this path is relative to the current directory from which the Node.js is ran, not the application itself.
-    apis: ['./src/routes/*'],
+    apis: ['./src/types/**/*.yaml', './src/routes/*'],
 };
 // const fs = require('fs');
 // Initialize swagger-jsdoc -> returns validated swagger spec in json format

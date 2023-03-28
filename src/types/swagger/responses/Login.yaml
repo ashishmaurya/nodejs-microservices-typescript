@@ -1,0 +1,12 @@
+components:
+  examples:
+    LoginSuccess:
+      value:
+        username: "ashish.maurya"
+        password: "pass@123"
+      summary: "Request body to login successfully"
+    LoginResponse:
+      value: 
+        code: 200
+        message: "logged in successfully"
+        token: "JWT_TOKEN"

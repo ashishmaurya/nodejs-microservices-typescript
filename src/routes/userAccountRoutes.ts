@@ -19,20 +19,6 @@ import { IAppRoute } from './IAppRoute';
  * 
  */
 
-
-/**
- * @openapi
- * components:
- *  schemas:
- *    LoginRequestBody:
- *      type: object
- *      properties:
- *        username:
- *          type: string
- *        password:
- *          type: string
- *          
- */
 interface ILoginRequestBody{
   username: string;
   password: string;
@@ -63,9 +49,19 @@ class UserAccountRoutes implements IAppRoute {
    *          application/json:
    *            schema:
    *              $ref: "#/components/schemas/LoginRequestBody"
+   *            examples:
+   *              loginSuccess:
+   *                $ref: "#/components/examples/LoginSuccess"
    *     responses:
    *       200:
    *         description: returns successfull login user
+   *         content:
+   *           application/json:
+   *             schema:
+   *               $ref: "#/components/schemas/LoginRequestBody" 
+   *             examples:
+   *               loginResponse:
+   *                  $ref: "#/components/examples/LoginResponse"
    */
   private async login(req: express.Request<any,any,ILoginRequestBody>, res: express.Response) {
     try {
@@ -96,6 +92,10 @@ class UserAccountRoutes implements IAppRoute {
    *     tags: 
    *      - hi
    *     description: Welcome to nodejs-microservices!
+   *     security:
+   *        - apiAuthorization: []
+   *     parameters:
+   *        - $ref: '#/components/parameters/productId'
    *     responses:
    *       200:
    *         description: Returns a hello from server string.

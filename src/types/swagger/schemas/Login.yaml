@@ -1,0 +1,12 @@
+components:
+  schemas:
+    LoginRequestBody:
+      type: object
+      properties:
+        username:
+          type: string
+          description: "Username to login"
+        password:
+          type: string
+          description: "User's password."
+      description: "Request body to send in request body for login"
